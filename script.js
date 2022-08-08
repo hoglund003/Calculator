@@ -21,4 +21,5 @@ function divide(num1, num2) {
 
 function operate(num1, num2, operator) {
     var result = operator(num1, num2);
+    return result;
 }
