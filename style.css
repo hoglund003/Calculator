@@ -15,11 +15,15 @@ body {
     justify-content: center;
 }
 
+.row .btn.clear {
+    width: 206.2833px;
+}
+
 .expression input {
     width: 202.2833px;
     border: 1px solid black;
     border-radius: 0;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .flex-container {
@@ -43,6 +47,11 @@ body {
 
 .row {
     display: flex;
+}
+
+.row.clear {
+    display: flex;
+    justify-content: center;
 }
 
 .btn {
