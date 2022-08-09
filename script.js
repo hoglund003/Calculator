@@ -1,6 +1,7 @@
 
 const expressionEl = document.querySelector(".expression input");
 const numberButtonsEl = document.querySelectorAll(".btn.number");
+const clearButton = document.querySelector(".btn.clear");
 
 var expression = "";
 
@@ -31,13 +32,23 @@ function operate(num1, num2, operator) {
     return result;
 }
 
+function setExpression(value) {
+    expression = value;
+    expressionEl.value = expression;
+}
+
+function addToExpression(value) {
+    expression += value;
+    setExpression(expression);
+}
+
 numberButtonsEl.forEach(button => {
     button.addEventListener("click", () => {
-        var number = button.innerHTML;
-        console.log(number);
-        expression += number;
-        expressionEl.value += number;
+        addToExpression(button.innerHTML);
     });
 });
 
+clearButton.addEventListener("click", () => {
+    setExpression("");
+});
 
