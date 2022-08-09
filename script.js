@@ -65,11 +65,20 @@ operatorButonsEl.forEach(operatorButton => {
 });
 
 eaqualsButtonEl.addEventListener("click", () => {
+    
     var expressionArr = expression.split(" ");
     var num1 = parseInt(expressionArr[0]);
-    var operator = expressionArr[1]
+    var operator = expressionArr[1];
     var num2 = parseInt(expressionArr[2]);
     var result = operate(num1, num2, operator);
+
+    if (expressionArr.length > 3) {
+        for (let index = 3; index < expressionArr.length; index+=2) {
+            var nextOperator = expressionArr[index];
+            var nextNumber = parseInt(expressionArr[index + 1]);
+            result = operate(result, nextNumber, nextOperator);
+        }
+    }
     setExpression(result);
 });
 
